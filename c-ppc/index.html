@@ -1,9 +1,418 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Coming soon...</title>
-    <link rel="stylesheet" href="../assets/style.css">
+    <head>
+        <meta charset="utf-8">
+        <meta name="description"
+              content="A Comparative Assessment Of Implicit and Explicit Plenoptic Scene Representations">
+        <meta name="keywords" content="NeRF, 3D Gaussian Splatting, Plenoptic Point Clouds, Compression">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>A Comparative Assessment Of Implicit and Explicit Plenoptic Scene Representations</title>
+      
+        <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+              rel="stylesheet">
+      
+        <link rel="stylesheet" href="./static/css/bulma.min.css">
+        <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+        <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+        <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+        <link rel="stylesheet"
+              href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+        <link rel="stylesheet" href="./static/css/index.css">
+        <link rel="icon" href="./static/images/favicon.svg">
+      
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script defer src="./static/js/fontawesome.all.min.js"></script>
+        <script src="./static/js/bulma-carousel.min.js"></script>
+        <script src="./static/js/bulma-slider.min.js"></script>
+        <script src="./static/js/index.js"></script>
+        <script src="./static/js/script.js"></script>
 </head>
+
+<body>
+
+      <section class="hero">
+            <div class="hero-body">
+              <div class="container is-max-desktop">
+                <div class="columns is-centered">
+                  <div class="column has-text-centered">
+                    <h1 class="title is-1 publication-title">A Comparative Assessment Of Implicit and Explicit Plenoptic Scene Representations</h1>
+                    <div class="is-size-4 publication-conference">
+                        MMSP 2024
+                    </div>
+                    <div class="is-size-5 publication-authors">
+                      <span class="author-block">
+                        <a href="https://ieeexplore.ieee.org/author/37088686554">Davi R. Freitas</a><sup>1</sup>,</span>
+                      <span class="author-block">
+                        <a href="https://queiroz.divp.org/">Ricardo L. de Queiroz</a><sup>2</sup>,</span>
+                      <span class="author-block">
+                        <a href="https://scholar.google.com/citations?user=aUBNFxwAAAAJ&hl=en">Ioan Tabus</a><sup>3</sup>,
+                      </span>
+                      <span class="author-block">
+                        <a href="https://people.rennes.inria.fr/Christine.Guillemot/">Christine Guillemot</a><sup>1</sup>,
+                      </span>
+                    </div>
+          
+                    <div class="is-size-5 publication-authors">
+                      <span class="author-block"><sup>1</sup>Inria de l'Université de Rennes, </span>
+                      <span class="author-block"><sup>2</sup>Universidade de Brasília, </span>
+                      <span class="author-block"><sup>3</sup>Tampere University</span>
+                    </div>
+          
+                    <div class="column has-text-centered">
+                      <div class="publication-links">
+                        <!-- PDF Link. -->
+                        <span class="link-block">
+                          <a href="https://inria.hal.science/hal-04709909"
+                             class="external-link button is-normal is-rounded is-dark">
+                            <span class="icon">
+                                <i class="fas fa-file-pdf"></i>
+                            </span>
+                            <span>Paper</span>
+                          </a>
+                        </span>
+                        <!-- <span class="link-block">
+                          <a href="https://arxiv.org/abs/2011.12948"
+                             class="external-link button is-normal is-rounded is-dark">
+                            <span class="icon">
+                                <i class="ai ai-arxiv"></i>
+                            </span>
+                            <span>arXiv</span>
+                          </a>
+                        </span> -->
+                        <!-- Code Link. -->
+                        <!-- <span class="link-block">
+                          <a href="https://github.com/google/nerfies"
+                             class="external-link button is-normal is-rounded is-dark">
+                            <span class="icon">
+                                <i class="fab fa-github"></i>
+                            </span>
+                            <span>Code</span>
+                            </a>
+                        </span> -->
+                        <span class="link-block">
+                              <a href="#" class="external-link button is-normal is-rounded is-dark disabled">
+                              <span class="icon">
+                                    <i class="fab fa-github"></i>
+                              </span>
+                              <span>Code</span>
+                              <span class="overlay button is-normal is-rounded">Soon</span>
+                              </a>
+                        </span>
+                        <!-- Dataset Link. -->
+                        <!-- <span class="link-block">
+                          <a href="https://github.com/google/nerfies/releases/tag/0.1"
+                             class="external-link button is-normal is-rounded is-dark">
+                            <span class="icon">
+                                <i class="far fa-images"></i>
+                            </span>
+                            <span>Dataset</span>
+                            </a> -->
+
+                            <span class="link-block">
+                              <a href="#" class="external-link button is-normal is-rounded is-dark disabled">
+                              <span class="icon">
+                                    <i class="far fa-images"></i>
+                              </span>
+                              <span>Dataset</span>
+                              <span class="overlay button is-normal is-rounded">Soon</span>
+                              </a>
+                        </span>
+                      </div>
+          
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section> 
+          <!-- /Header -->
+
+      <section class="section">
+            <div class="container is-max-desktop">
+                  <!-- Abstract -->
+                  <div class="columns is-centered has-text-centered">
+                        <div class="column is-four-fifths">
+                              <h2 class="title is-3">Abstract</h2>
+                              <div class="content has-text-justified">
+                              <p>
+                                    3D scene representation has been a central theme
+                                    of study for a wide range of applications, and the representation
+                                    of light behavior is one of the relevant topics when producing
+                                    realistic models. In this work, we create a framework to assess
+                                    the representation of non-Lambertian scenes by generating a
+                                    pipeline to create plenoptic point clouds (PPCs) systematically
+                                    and evaluating them against implicit solutions, such as Neural 
+                                    Radiance Fields (NeRF)-like models.
+                              </p>
+                              <p>
+                                    We compare such approaches
+                                    according to rendering quality and compression efficiency. On
+                                    the compression side, we propose an encoding scheme for PPC,
+                                    leveraging the occlusion masks of the points and the Moving
+                                    Picture Expert Group’s (MPEG) Geometry-Based Solid Content
+                                    Test Model (GeS-TM).
+                              </p>
+                              <p>
+                                    Rendering results over the training views
+                                    show that the uncompressed PPC outperforms 3D Gaussian
+                                    Splatting (3DGS) by 1.51 dB, on average, for the 8 scenes of the
+                                    NeRF Synthetic 360 dataset. In compression efficiency, 3DGS
+                                    outperforms the compressed PPCs by 0.7 dB in BD-PSNR on
+                                    average. Our occlusion-aware encoding scheme reduces the size
+                                    of uncompressed PPCs up to 800 times, outperforming current
+                                    encoding schemes for PPC by 1.9 dB in BD-PSNR.
+                              </p>
+                              </div>
+                        </div>
+                  </div>
+                  <!--/ Abstract. -->
+
+
+                  <!-- Method -->
+                  <div class="columns is-centered has-text-centered">
+                        <div class="column is-four-fifths">
+                              <h2 class="title is-3">Framework Design for Explicit vs Implicit Comparison</h2>
+                              <div class="content has-text-justified">
+                                    <img src="./static/images/diagram_method.svg"
+                                          alt="Diagram for proposed method">
+                                    <p> 1) We propose a way to compare the plenoptic modeling of both explicit (PPCs) and 
+                                    implicit (NeRF-like) 3D schemes in an encoding context, in terms of:
+                                    <ul>
+                                          <li>Rendering quality</li>
+                                          <li>Compression efficiency</li>
+                                    </ul>
+                                    </p>
+                                    <p>
+                                          2) Additionally, we provide a pipeline to generate PPCs systematically, 
+                                          using the colorless point cloud and images of the scene.
+                                    </p>
+                                    <p>
+                                          3) And finally, we propose an efficient encoding scheme of the PPCs 
+                                          based on their occlusion maps over the training views.
+                                    </p>
+
+                              </div>
+                        </div>
+                  </div>
+                  <!--/ Method -->
+
+                  <!-- Results -->
+                  <div class="columns is-centered has-text-centered">
+                        <div class="column is-four-fifths">
+                              <h2 class="title is-3">Results</h2>
+                              <div class="content has-text-justified">
+                                    <p>
+                                          We use in our experiments a regenerated version of the NeRF-Synthetic 360
+                                          dataset, with 8 sequences and training sets of 100 images with dimensions 
+                                          of 800x800.
+                                    </p>
+                                    <p>
+                                          Analysis for rendered views over the training data present gains of up
+                                          of more than 1.5 dB for the explicit representations (PPCs) over the 
+                                          (uncompressed) 3DGS models.
+                                    </p>
+                                    <img src="./static/images/table_1.png"
+                                          alt="Metrics Results for Table 1">
+
+                                    <!-- <img src="./static/images/table_2.png"
+                                          alt="Metrics Results for Table 2"> -->
+                                    <p>
+                                          For the compressed models, our occlusion-aware coding scheme reduces the sizes of
+                                          uncompressed PPCs by up to 800x.
+                                          The rate-distortion (RD) analysis for the compressed methods provides gains
+                                          for certain scenes of the dataset, with up to ~5 dB in BD-PSNR for our compressed PPCs (C-PPCs) scenes in drums (see Figure below), over the
+                                          100 training images.
+                                    </p>
+                                    <img src="./static/images/drums_v5.svg"
+                                          alt="RD Results for drums sequence">
+
+                              </div>
+                        </div>
+                  </div>
+                  <!--/ Results -->
+
+                  <!-- Visualization -->
+                  <div class="columns is-centered has-text-centered">
+                        <div class="column is-four-fifths">
+                              <h2 class="title is-3">Visualization</h2>
+                              <div class="content is-centered">
+                                    <p>
+                                          Comparisons against the Ground-Truth for the uncompressed 3DGS model,
+                                          uncompressed PPC and a compressed PPC with QP=34 for the attributes 
+                                          for the sequence "ship" respectively.
+                                    </p>
+                                    <!-- Visual Effects. -->
+                                    <div class="column">
+                                          <div class="content is-centered">
+                                          <div class="bal-container-small image-compare">
+
+                                                <div class="bal-after">
+                                                      <img src="static/images/visualization/img_3dgs.svg">
+                                                      <div class="bal-afterPosition afterLabel" style="z-index:1;">
+                                                      3DGS 
+                                                      </div>
+                                                      <div class="bal-afterPosition afterSize" style="z-index:1;">
+                                                      29.61 dB, 82.1 MB
+                                                      </div>
+                                                </div>
+
+                                                <div class="bal-before" style="width:96.4968152866242%;">
+                                                      <div class="bal-before-inset" style="width: 500px;">
+                                                      <img src="static/images/visualization/img_gt.svg">
+                                                      <div class="bal-beforePosition beforeLabel">
+                                                            Ground-Truth
+                                                      </div>
+                                                      </div>
+                                                </div>
+
+                                                <div class="bal-handle" style="left:80%;">
+                                                      <span class=" handle-left-arrow"></span>
+                                                      <span class="handle-right-arrow"></span>
+                                                </div>
+
+                                          </div>
+
+                                          <div class="bal-container-small image-compare">
+
+                                                <div class="bal-after">
+                                                      <img src="static/images/visualization/img_ppc.svg">
+                                                      <div class="bal-afterPosition afterLabel" style="z-index:1;">
+                                                      PPC
+                                                      </div>
+                                                      <div class="bal-afterPosition afterSize" style="z-index:1;">
+                                                      34.64 dB, 842 MB
+                                                      </div>
+                                                </div>
+
+                                                <div class="bal-before" style="width:96.4968152866242%;">
+                                                      <div class="bal-before-inset" style="width: 400px;">
+                                                      <img src="static/images/visualization/img_gt.svg">
+                                                      <div class="bal-beforePosition beforeLabel">
+                                                            Ground-Truth
+                                                      </div>
+                                                      </div>
+                                                </div>
+
+                                                <div class="bal-handle" style="left:96.4968152866242%;">
+                                                      <span class=" handle-left-arrow"></span>
+                                                      <span class="handle-right-arrow"></span>
+                                                </div>
+
+                                          </div>
+                                          </div>
+                                    </div>
+                                    <div class="column">
+                                          <div class="content">
+                                          <div class="bal-container-small image-compare">
+
+                                                <div class="bal-after">
+                                                      <img src="static/images/visualization/img_ppc_qp_34.svg">
+                                                      <div class="bal-afterPosition afterLabel" style="z-index:1;">
+                                                      Ours (QP = 34)
+                                                      </div>
+                                                      <div class="bal-afterPosition afterSize" style="z-index:1;">
+                                                      31.49 dB, 15.6 MB
+                                                      </div>
+                                                </div>
+
+                                                <div class="bal-before" style="width:96.4968152866242%;">
+                                                      <div class="bal-before-inset" style="width: 400px;">
+                                                      <img src="static/images/visualization/img_gt.svg">
+                                                      <div class="bal-beforePosition beforeLabel">
+                                                            Ground-Truth
+                                                      </div>
+                                                      </div>
+                                                </div>
+
+                                                <div class="bal-handle" style="left:96.4968152866242%;">
+                                                      <span class=" handle-left-arrow"></span>
+                                                      <span class="handle-right-arrow"></span>
+                                                </div>
+
+                                          </div>
+
+                                       \
+                                          </div>
+                                    </div>
+                                    <!--/ Visual Effects. -->
+                              </div>
+                              </div>
+                        </div>
+                  </div>
+                  <!--/ Visualization -->
+
+                  <!-- Bibliography -->
+                  <section class="section" id="BibTeX">
+                        <div class="container is-max-desktop content">
+                            <h2 class="title">BibTeX</h2>
+                            <pre><code>@inproceedings{freitas:hal-04709909,
+                              TITLE = {{A Comparative Assessment Of Implicit and Explicit Plenoptic Scene Representations}},
+                              AUTHOR = {Freitas, Davi R and de Queiroz, Ricardo L and Tabus, Ioan and Guillemot, Christine},
+                              URL = {https://inria.hal.science/hal-04709909},
+                              BOOKTITLE = {{MMSP 2024 - 26th IEEE International Workshop on Multimedia Signal Processing}},
+                              ADDRESS = {West Lafayette (IN), United States},
+                              PAGES = {1-6},
+                              YEAR = {2024},
+                              MONTH = Oct,
+                              KEYWORDS = {NeRF ; 3D Gaussian Splatting ; Plenoptic Point Clouds ; Compression},
+                              PDF = {https://inria.hal.science/hal-04709909v1/file/MMSP_2024_PPCs_vs_Nerf_Camera-Ready_v2.pdf},
+                              HAL_ID = {hal-04709909},
+                              HAL_VERSION = {v1},
+                            }
+            }</code></pre>
+                        </div>
+                    </section>
+
+
+                    <footer class="footer">
+            <div class="container">
+                <div class="content has-text-centered">
+                    <a class="icon-link" href="https://inria.hal.science/hal-04709909v1/file/MMSP_2024_PPCs_vs_Nerf_Camera-Ready_v2.pdf">
+                        <i class="fas fa-file-pdf"></i>
+                    </a>
+                </div>
+                <div class="columns is-centered">
+                    <div class="column is-8">
+                        <div class="content">
+                            <p>
+                                We thank <a href="https://keunhong.com">Keunhong Park</a> and the authors of <a
+                                    href="https://nerfies.github.io/">Nerfies</a> for open sourcing the website's template.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+<script>
+      for (var elm of document.querySelectorAll(".image-compare")) {
+            new BeforeAfter(elm)
+      }
+      var options = {
+            slidesToScroll: 1,
+            slidesToShow: 3,
+            loop: true,
+            infinite: true,
+            autoplay: false,
+            autoplaySpeed: 3000,
+      }
+
+      // Initialize all div with carousel class
+      var carousels = bulmaCarousel.attach('.carousel', options);
+
+      for (var i = 0; i < carousels.length; i++) {
+            // Add listener to  event
+            carousels[i].on('before:show', () => { });
+      }
+
+      // Access to bulmaCarousel instance of an element
+      var element = document.querySelector('#my-element');
+      if (element && element.bulmaCarousel) {
+            // bulmaCarousel instance is available as element.bulmaCarousel
+            element.bulmaCarousel.on('before-show', () => { });
+      }
+</script>
+
+</body>
+
 </html>
